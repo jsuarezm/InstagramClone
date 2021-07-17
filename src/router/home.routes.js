@@ -2,12 +2,12 @@ import React from 'react';
 import {Image} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 
-import logo from './assets/images/logo.png';
+import logo from '../assets/images/logo.png';
 
 const HomeStack = createStackNavigator();
 
