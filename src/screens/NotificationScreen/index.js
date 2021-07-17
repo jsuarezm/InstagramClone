@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 
 const NotificationScreen = () => {
   return (
-    <View style={{backgroundColor: 'yellow', height: 1500}}>
+    <View style={{backgroundColor: 'orange', height: 1500}}>
       <Text
         style={{
           textAlign: 'center',

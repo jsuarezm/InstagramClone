@@ -8,9 +8,9 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView, StatusBar} from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import DiscoveryScreen from './screens/DiscoveryScreen';
 import CreatePostScreen from './screens/CreatePostScreen';
@@ -18,35 +18,43 @@ import NotificationScreen from './screens/NotificationScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Foundation from 'react-native-vector-icons/Foundation';
-
+import Feather from 'react-native-vector-icons/Feather';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Tab = createBottomTabNavigator();
 
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
       <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Home') {
-            iconName = focused
-              ? 'ios-information-circle'
-              : 'ios-information-circle-outline';
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'ios-list-box' : 'ios-list';
-          }
-
-          // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
-      }}
-      >
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            if (route.name === 'Home') {
+              return <Foundation name="home" size={size} color={color} />;
+            }
+            if (route.name === 'Discovery') {
+              return <Feather name="search" size={size} color={color} />;
+            }
+            if (route.name === 'Post') {
+              return <Feather name="plus-square" size={size} color={color} />;
+            }
+            if (route.name === 'Post') {
+              return <Feather name="plus-square" size={size} color={color} />;
+            }
+            if (route.name === 'Notifications') {
+              return <AntDesign name="hearto" size={size} color={color} />;
+            }
+            if (route.name === 'Profile') {
+              return <Ionicons name="person-outline" size={size} color={color} />;
+            }
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: '#000',
+          inactiveTintColor: 'gray',
+          showLabel: false,
+        }}>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Discovery" component={DiscoveryScreen} />
         <Tab.Screen name="Post" component={CreatePostScreen} />

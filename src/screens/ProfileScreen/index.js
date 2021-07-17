@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 
 const ProfileScreen = () => {
   return (
-    <View style={{backgroundColor: 'green', height: 1500}}>
+    <View style={{backgroundColor: 'purple', height: 1500}}>
       <Text
         style={{
           textAlign: 'center',
