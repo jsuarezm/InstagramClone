@@ -1,0 +1,23 @@
+import React from 'react';
+import {FlatList} from 'react-native';
+import Story from '../UserStoryPreview';
+import storiesData from '../../data/stories';
+
+import styles from './styles';
+
+const Stories = () => {
+  return (
+    <FlatList
+      data={storiesData}
+      keyExtractor={({name}) => name}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={styles.container}
+      renderItem={({item}) => (
+        <Story imageUri={item.imageUri} name={item.name} />
+      )}
+    />
+  );
+};
+
+export default Stories;

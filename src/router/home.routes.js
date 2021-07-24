@@ -33,8 +33,12 @@ const HomeRoutes = () => {
             marginRight: 15,
           },
           headerTitle: () => (
-            // eslint-disable-next-line react-native/no-inline-styles
-            <Image source={logo} resizeMode="contain" style={{width: 130}} />
+           <Image
+              source={logo}
+              resizeMode="contain"
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{width: 135, height: 50}}
+            />
           ),
         }}
       />
