@@ -1,16 +1,21 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 import ProfilePicture from '../ProfilePicture';
 import styles from './styles';
 
-const Story = ({imageUri, name}) => {
+const Story = props => {
+  const {
+    story: {
+      user: {id, imageUri, name},
+    },
+  } = props;
 
   const navigation = useNavigation();
 
   const onPress = () => {
-    navigation.navigate("Story");
+    navigation.navigate('Story', {userId: id});
   };
 
   return (
