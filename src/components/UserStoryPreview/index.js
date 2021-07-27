@@ -8,7 +8,7 @@ import styles from './styles';
 const Story = props => {
   const {
     story: {
-      user: {id, imageUri, name},
+      user: {id, image, name},
     },
   } = props;
 
@@ -20,7 +20,7 @@ const Story = props => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <ProfilePicture uri={imageUri} />
+      <ProfilePicture uri={image} />
       <Text style={styles.name}>{name}</Text>
     </TouchableOpacity>
   );
